@@ -26,6 +26,11 @@
         .logo {
             background-image: url(img/LOGO.png);
         }
+
+        .botao {
+            background-color: #005caa;
+            color: #ffffff;
+        }
     }
 
     body[data-theme="dark"] {
@@ -38,13 +43,19 @@
         .logo {
             background-image: url(img/LOGO-DARK.png);
         }
+
+        .botao {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
     }
 
     body {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         height: 100vh;
+        transition: .2s;
 
         background-color: var(--pico-background-color);
         color: var(--pico-color);
@@ -62,6 +73,7 @@
         justify-content: center;
         flex-direction: column;
         max-width: 500px;
+        height: 100vh;
     }
 
     .alinhar {
@@ -77,6 +89,9 @@
 </style>
 
 <body data-theme="dark">
+    <header>
+        <button class="botao">Claro</button>
+    </header>
     <section class="container">
         <div class="logo"></div>
 
@@ -89,4 +104,20 @@
     </section>
 </body>
 
+<script>
+    const btn_tema = document.querySelector('.botao');
+    const body = document.body;
+
+    btn_tema.addEventListener('click', () => {
+        const temaAtual = body.getAttribute('data-theme');
+
+        if (temaAtual === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            btn_tema.textContent = 'Escuro';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            btn_tema.textContent = 'Claro';
+        }
+    });
+</script>
 </html>
