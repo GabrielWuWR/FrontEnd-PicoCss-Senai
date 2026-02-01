@@ -22,6 +22,22 @@
         --pico-font-size: 2rem;
         --pico-secondary-background: #ffffff;
         --pico-secondary-color: #ff0000;
+
+        .logo {
+            background-image: url(img/LOGO.png);
+        }
+    }
+
+    body[data-theme="dark"] {
+        --pico-background-color: #005caa;
+        --pico-color: #ffffff;
+        --pico-font-size: 2rem;
+        --pico-secondary-background: #ffffff;
+        --pico-secondary-color: #005caa;
+
+        .logo {
+            background-image: url(img/LOGO-DARK.png);
+        }
     }
 
     body {
@@ -51,11 +67,18 @@
     .alinhar {
         text-align: end;
     }
+
+    .logo {
+        height: 15vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 </style>
 
-<body data-theme="light">
+<body data-theme="dark">
     <section class="container">
-        <img src="img/LOGO.png" alt="">
+        <div class="logo"></div>
 
         <div class="letras">
             <p>Aprende <span class="">fazendo</span></p>
